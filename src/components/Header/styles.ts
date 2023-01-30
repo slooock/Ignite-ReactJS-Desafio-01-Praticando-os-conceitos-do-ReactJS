@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.section`
   background: var(--gray-700);
@@ -7,4 +7,4 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   width: 100vw;
-`;
+`

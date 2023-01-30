@@ -1,8 +1,8 @@
-import { Container } from "./styles";
+import { Container } from './styles'
 
 interface InfoLabelProps {
-  text: string;
-  quant: string;
+  text: string
+  quant: string
 }
 
 function InfoLabel({ text, quant }: InfoLabelProps) {
@@ -11,7 +11,7 @@ function InfoLabel({ text, quant }: InfoLabelProps) {
       <div>{text}</div>
       <div>{quant}</div>
     </Container>
-  );
+  )
 }
 
-export default InfoLabel;
+export default InfoLabel

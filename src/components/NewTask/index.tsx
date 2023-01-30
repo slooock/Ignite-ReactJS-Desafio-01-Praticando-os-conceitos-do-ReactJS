@@ -1,6 +1,6 @@
-import { Container } from "./styles";
-import logo from "../../assets/logo.svg";
-import { FiPlusCircle } from "react-icons/fi";
+import { Container } from './styles'
+import logo from '../../assets/logo.svg'
+import { FiPlusCircle } from 'react-icons/fi'
 
 function NewTask() {
   return (
@@ -11,7 +11,7 @@ function NewTask() {
         <FiPlusCircle />
       </button>
     </Container>
-  );
+  )
 }
 
-export default NewTask;
+export default NewTask

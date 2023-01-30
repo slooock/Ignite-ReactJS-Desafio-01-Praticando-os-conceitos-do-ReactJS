@@ -1,12 +1,30 @@
 import { Container } from './styles'
 
-import InfoLabel from '../InfoLabel'
+import Task from '../Task'
 
 function ListTasks() {
   return (
     <Container>
-      <InfoLabel text="Tarefas criadas" quant="32" />
-      <InfoLabel text="Concluídas" quant="10" />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
     </Container>
   )
 }

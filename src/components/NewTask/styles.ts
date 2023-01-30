@@ -19,6 +19,7 @@ export const Container = styled.section`
     transition: background 0.5s;
     ::placeholder,
     ::-webkit-input-placeholder {
+      font-size: 1rem;
       color: var(--gray-300);
     }
     :-ms-input-placeholder {
@@ -39,18 +40,22 @@ export const Container = styled.section`
     justify-content: center;
     background: var(--blue-dark);
     height: 3.35rem;
-    width: 6.62rem;
+    width: 8.62rem;
     outline: none;
     border: none;
     color: white;
     border-radius: 8px;
     transition: background 0.5s;
+    font-weight: 600;
+    font-size: 1.2rem;
     :hover {
       background-color: var(--blue);
     }
 
     svg {
       margin-left: 8px;
+      height: 1.5rem;
+      width: 1.5rem;
     }
   }
 `

@@ -1,5 +1,4 @@
 import { Container } from './styles'
-import logo from '../../assets/logo.svg'
 import { FiPlusCircle } from 'react-icons/fi'
 
 function NewTask() {

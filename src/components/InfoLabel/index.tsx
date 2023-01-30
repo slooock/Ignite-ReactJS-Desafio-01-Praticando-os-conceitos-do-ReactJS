@@ -1,15 +1,16 @@
-import { Container } from './styles'
+import { Container, PrincipalText, SecondaryText } from './styles'
 
 interface InfoLabelProps {
   text: string
   quant: string
+  color?: string
 }
 
-function InfoLabel({ text, quant }: InfoLabelProps) {
+function InfoLabel({ text, quant, color }: InfoLabelProps) {
   return (
     <Container>
-      <div>{text}</div>
-      <div>{quant}</div>
+      <PrincipalText color={color}>{text}</PrincipalText>
+      <SecondaryText>{quant}</SecondaryText>
     </Container>
   )
 }

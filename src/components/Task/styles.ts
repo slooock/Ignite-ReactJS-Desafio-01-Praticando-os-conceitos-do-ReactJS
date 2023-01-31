@@ -41,7 +41,7 @@ export const Container = styled.div.attrs(
 
   .CheckboxRoot {
     background-color: transparent;
-    width: 1.5rem;
+    min-width: 1.5rem;
     height: 1.5rem;
     border-radius: 4px;
     display: flex;
@@ -49,8 +49,7 @@ export const Container = styled.div.attrs(
     justify-content: center;
     border-radius: 50%;
     overflow: hidden;
-    border: ${(props) =>
-      props.checked ? '2px solid transparent' : '2px solid var(--blue)'};
+    border: ${(props) => (props.checked ? '' : '2px solid var(--blue)')};
     box-sizing: border-box;
   }
   .CheckboxRoot:hover {
@@ -68,7 +67,7 @@ export const Container = styled.div.attrs(
   }
 
   .Label {
-    color: white;
+    color: ${(props) => (!props.checked ? 'white' : 'var(--gray-300)')};
     padding-left: 15px;
     font-size: 15px;
     line-height: 1;

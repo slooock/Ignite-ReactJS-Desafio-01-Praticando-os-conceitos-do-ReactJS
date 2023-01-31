@@ -1,33 +1,49 @@
-import { Container } from './styles'
 import * as Checkbox from '@radix-ui/react-checkbox'
 import { CheckIcon } from '@radix-ui/react-icons'
-import { useState } from 'react'
 import { FiTrash } from 'react-icons/fi'
+import { Container } from './styles'
 
-function Task() {
-  const [checked, setChecked] = useState(false)
+export interface TaskAtributes {
+  text: string
+  done: boolean
+}
+interface TaskProps {
+  task: TaskAtributes
+  checkboxChange: (task: TaskAtributes) => void
+  deleteTask: (task: TaskAtributes) => void
+}
+
+function Task({ task, checkboxChange, deleteTask }: TaskProps) {
+  const check = task.done
   function hadleCheckboxChange() {
-    setChecked(!checked)
+    checkboxChange(task)
   }
+
+  function handleDelete() {
+    deleteTask(task)
+  }
+
   return (
-    <Container checked={checked}>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+    <Container checked={check}>
+      <div style={{ display: 'flex', alignItems: 'start' }}>
         <Checkbox.Root
           className="CheckboxRoot"
           defaultChecked
-          checked={checked}
+          checked={check}
           id="c1"
-          onCheckedChange={hadleCheckboxChange}
+          onCheckedChange={() => {
+            hadleCheckboxChange()
+          }}
         >
           <Checkbox.Indicator className="CheckboxIndicator">
             <CheckIcon />
           </Checkbox.Indicator>
         </Checkbox.Root>
         <label className="Label" htmlFor="c1">
-          Accept terms and conditions.
+          {check ? <s>{task.text}</s> : <span>{task.text} </span>}
         </label>
       </div>
-      <button className="buttonTrash">
+      <button className="buttonTrash" onClick={handleDelete}>
         <FiTrash size={17} />
       </button>
     </Container>

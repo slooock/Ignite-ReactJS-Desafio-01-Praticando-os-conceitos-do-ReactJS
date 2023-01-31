@@ -2,10 +2,11 @@ import { Container, MarginTop } from './styles'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import Task, { TaskAtributes } from '../Task'
 import { forwardRef, useImperativeHandle, useState } from 'react'
+import { ResumeQuants } from '../../pages'
 
 interface ListTaskProps {
   changeTasks: (task: TaskAtributes[]) => void
-  calcReduce: (info: any) => void
+  calcReduce: (info: ResumeQuants) => void
 }
 
 export interface ListTaskPropsFowardProps {
@@ -28,7 +29,10 @@ const ListTask = forwardRef<ListTaskPropsFowardProps, ListTaskProps>(
         }
       }, valorInicial)
 
-      return infosReduce
+      return {
+        quantTotal: infosReduce.quantTotal.toString(),
+        quantTrue: infosReduce.quantTrue.toString(),
+      }
     }
 
     const createTask = (text: string) => {

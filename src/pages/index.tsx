@@ -4,9 +4,10 @@ import InfoLabel from '../components/InfoLabel'
 import ListTasks, { ListTaskPropsFowardProps } from '../components/ListTasks'
 import NewTask from '../components/NewTask'
 import { TaskAtributes } from '../components/Task'
-import { Container, Content } from './styles'
+import { Container, Content, WidhoutTask } from './styles'
+import listImg from '../assets/Clipboard.svg'
 
-interface ResumeQuants {
+export interface ResumeQuants {
   quantTotal: string
   quantTrue: string
 }
@@ -44,6 +45,15 @@ function Home() {
           ref={ref}
           calcReduce={calcReduce}
         />
+        {resume.quantTotal === '0' && (
+          <WidhoutTask>
+            <img src={listImg} alt="logo lista" />
+            <p>
+              <strong>Você ainda não tem tarefas cadastradas </strong>
+              <span>Crie tarefas e organize seus itens a fazer</span>
+            </p>
+          </WidhoutTask>
+        )}
       </Content>
     </Container>
   )

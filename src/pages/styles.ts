@@ -19,3 +19,19 @@ export const Content = styled.section`
     justify-content: space-between;
   }
 `
+export const WidhoutTask = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    height: 3rem;
+    width: 3rem;
+  }
+  p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+`
